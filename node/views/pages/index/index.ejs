@@ -121,18 +121,24 @@
                     <div class="btn-area"><a href="#0"><img src="/public/assets/images/elements/google-btn-text.png"
                                 alt="image"></a><a href="#0"><img
                                 src="/public/assets/images/elements/facebook-btn-text.png" alt="image"></a></div>
-                    <form class="signup-form">
+                    <form class="signup-form" action="/signup" method="POST">
                         <div class="form-row justify-content-between">
-                            <div class="col-lg-4 custom-form-field"><i class="fa fa-user"></i><input type="text"
-                                    name="signup_name" id="signup_name" placeholder="User Name"></div>
-                            <div class="col-lg-4 custom-form-field"><i class="fa fa-lock"></i><input type="password"
-                                    name="signup_pass" id="signup_pass" placeholder="Password"></div>
-                            <div class="col-lg-4 custom-form-field"><i class="fa fa-lock"></i><input type="password"
-                                    name="signup_re-pass" id="signup_re-pass" placeholder="Re-Password"></div>
+                            <div class="col-lg-4 custom-form-field">
+                                <i class="fa fa-user"></i>
+                                    <input type="text" name="signup_name" id="signup_name" placeholder="User Name">
+                            </div>
+                            <div class="col-lg-4 custom-form-field">
+                                <i class="fa fa-lock"></i>
+                                    <input type="password" name="signup_pass" id="signup_pass" placeholder="Password">
+                            </div>
+                            <div class="col-lg-4 custom-form-field">
+                                <i class="fa fa-lock"></i>
+                                    <input type="password" name="signup_re-pass" id="signup_re-pass" placeholder="Re-Password">
+                            </div>
                             <div class="col-lg-12 text-center">
                                 <p>You have account in here? <a href="#0" class="switch-login-page-btn">Signin</a></p>
                             </div>
-                            <div class="col-lg-12 text-center mt-4"><a href="#0" class="cmn-btn">Registration</a></div>
+                            <div class="col-lg-12 text-center mt-4"><a href="/signup" class="cmn-btn">Registration</a></div>
                         </div>
                     </form>
                 </div>
