@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const res = require('express/lib/response')
 const mysql = require('mysql');
 const conexion = require('../../database/db');
 
