@@ -10,7 +10,7 @@ const index = async (req, res) => {
             if (error) {
                 console.log('Error con la base de datos')
             } else {
-                console.log('Todo perfecto');
+                console.log('Todo perfecto1');
                 res.render('pages/index/index')
             }
         })
@@ -29,13 +29,16 @@ const signup = async (req, res) => {
         
 		let input_values = [
             req.body['signup_name'],
+            req.body['signup_mail'],
 			req.body['signup_pass']
 		]
-        const sql = `INSERT INTO user (nombre, contraseña VALUES ('${input_values [0]}','${input_values [1]}');`
+        const sql = `INSERT INTO user (nombre, email, contraseña) VALUES ('${input_values [0]}', '${input_values [1]}', '${input_values [2  ]}');`
+        console.log(req.body)
+        console.log(sql)
         conexion.query(sql, function (error, results) {
         if (error) {
                 console.log('Error con la base de datos')
-                console.log(input_values)
+                console.log(req.body)
                 console.log(sql)
                 console.error(error)
             } else {
