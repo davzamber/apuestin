@@ -32,7 +32,7 @@ const signup = async (req, res) => {
             req.body['signup_mail'],
 			req.body['signup_pass']
 		]
-        const sql = `INSERT INTO user (nombre, email, contraseña) VALUES ('${input_values [0]}', '${input_values [1]}', '${input_values [2  ]}');`
+        const sql = `INSERT INTO user (nombre, email, contraseña) VALUES ('${input_values [0]}', '${input_values [1]}', '${input_values [2]}');`
         console.log(req.body)
         console.log(sql)
         conexion.query(sql, function (error, results) {
@@ -51,10 +51,30 @@ const signup = async (req, res) => {
         console.log(error)
     }
 }
-
+const login = async (req, res) => {
+	try {
+		let user = req.body.login_name
+		let pass = req.body.login_pass
+		let query = ''
+		
+		const sql = `SELECT nombre, contraseña FROM user WHERE nombre = '${user}' AND contraseña = '${pass}';`;
+		conexion.query(sql, async function(error, results) {
+		if (results.length == 0) {
+			console.log('Usuario o contraseña incorrecta')
+		} else {
+			console.log('Sesion iniciada')
+			
+			res.render('pages/index/index')
+		}
+    })
+	} catch (error) {
+		console.log('Error de conexión con la base de datos')
+	} 
+}
 
 
 module.exports = {
     index: index,
-    signup : signup
+    signup : signup,
+    login:login
 }
