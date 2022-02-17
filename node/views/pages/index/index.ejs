@@ -64,20 +64,29 @@
                                 </li>
                                 <li><a href="contact.html">contact us</a></li>
                             </ul>
-                            <div class="nav-right">
-                                <ul class="nav-right-menu">
-                                    <li>Registration<ul class="nav-right-sbu-menu">
+                            <% if(login != true){ %>
+                                <div class="nav-right">
+                                    <ul class="nav-right-menu">
+                                        <li>Registration<ul class="nav-right-sbu-menu">
                                             <li><a href="#0" class="login-open-btn">Sign In</a></li>
                                             <li><a href="#0" class="signup-open-btn">Sign Up</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
+                            <% } else { %>
+                                <li class="menu_has_children">
+                                    <ul class="sub-menu">
+                                        <li><a href="/logout">Cerrar sesión</a></li>
+                                    </ul>
+                                </li>
+                                <% } %>
                         </div>
                     </nav>
                 </div>
             </div>
         </header>
+        
         <!--REGISTO Y LOGIN -->
         <div class="login-section">
             <div class="section-bg-image bg_img" data-background="/public/assets/images/bg/singin.jpg"></div>
@@ -128,12 +137,12 @@
                                 <input type="text" name="signup_name" id="signup_name" placeholder="User Name">
                             </div>
                             <div class="col-lg-4 custom-form-field">
-                                <i class="fa fa-user"></i>
-                                    <input type="mail" name="signup_mail" id="signup_mail" placeholder="Email">
-                            </div>
-                            <div class="col-lg-4 custom-form-field">
                                 <i class="fa fa-lock"></i>
                                 <input type="password" name="signup_pass" id="signup_pass" placeholder="Password">
+                            </div>
+                            <div class="col-lg-4 custom-form-field">
+                                <i class="fa fa-user"></i>
+                                    <input type="mail" name="signup_mail" id="signup_mail" placeholder="Email">
                             </div>
                             <!-- <div class="col-lg-4 custom-form-field">
                                 <i class="fa fa-lock"></i>
