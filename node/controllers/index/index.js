@@ -12,9 +12,9 @@ const index = async (req, res) => {
             if (req.session.loggedIn) {
                 res.render('pages/index/index', {
                     login: true,
-                    name: req.session.user
+                    name: req.session.username
                 })
-                console.log(req.session.loggedIn)
+                console.log(req.session.user)
             } else {
                 res.render('pages/index/index', {
                     login: false,
