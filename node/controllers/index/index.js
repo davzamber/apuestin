@@ -14,13 +14,13 @@ const index = async (req, res) => {
                     login: true,
                     name: req.session.username
                 })
-                console.log(req.session.user)
+                console.log(req.session.username)
             } else {
                 res.render('pages/index/index', {
                     login: false,
                     name: 'Iniciar sesión'
                 })
-                console.log(req.session.loggedIn)
+                console.log('this')
 
             }
         
